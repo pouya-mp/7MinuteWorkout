@@ -200,4 +200,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         customDialog.show()
     }
 
+    override fun onBackPressed() {
+        customDialogForBackButton()
+    }
+
 }
