@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="16dp"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Are you sure ? "
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="This will stop your workout. are you sure you want to quit ? "
+        android:textSize="16sp"
+        android:textColor="#212121"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        
+        <Button
+            android:id="@+id/dialogBtnYes"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="@color/colorAccent"
+            android:text="YES"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/dialogBtnNo"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="@color/colorAccent"
+            android:text="NO"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"/>
+        
+    </LinearLayout>
+
+</LinearLayout>
