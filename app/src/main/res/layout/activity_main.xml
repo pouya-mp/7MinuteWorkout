@@ -13,7 +13,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="220dp"
-        android:contentDescription="@string/image"
+        android:contentDescription="@string/application_header"
         android:src="@drawable/img_main_page" />
 
     <LinearLayout
@@ -55,13 +55,14 @@
                 android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:contentDescription="@string/bmi_button"
                 android:background="@drawable/item_circular_color_accent_background"
                 >
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BMI"
-                    android:textColor="#FFFFFF"
+                    android:text="@string/bmi"
+                    android:textColor="@color/colorMainActivityBmiButton"
                     android:textSize="22sp"
                     android:textStyle="bold"/>
 
@@ -72,7 +73,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Calculator"
+                android:text="@string/calculator"
                 android:layout_marginTop="5dp"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -100,7 +101,8 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/ic_calendar"
-                    android:contentDescription="@string/image"/>
+                    android:contentDescription="@string/history_button"
+                    />
 
 
             </LinearLayout>
@@ -108,7 +110,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="History"
+                android:text="@string/history"
                 android:layout_marginTop="5dp"
                 android:textSize="22sp"
                 android:textStyle="bold"

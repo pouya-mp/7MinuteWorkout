@@ -33,9 +33,9 @@ class HistoryAdapter(val context: Context, val items : ArrayList<String>) : Recy
         holder.tvDate.text = date
 
         if (position % 2 == 0){
-            holder.llHistoryItem.setBackgroundColor(Color.parseColor("#EBEBEB"))
+            holder.llHistoryItem.setBackgroundColor(Color.parseColor(context.getString(R.string.colorRecycleviewHistoryEvenBackground)))
         }else{
-            holder.llHistoryItem.setBackgroundColor(Color.parseColor("#FFFFFF"))
+            holder.llHistoryItem.setBackgroundColor(Color.parseColor(context.getString(R.string.colorRecycleviewHistoryOddBackground)))
 
         }
 

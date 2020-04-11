@@ -30,13 +30,13 @@ class ExerciseStatusAdapter(var items : ArrayList<ExerciseModel>,val context : C
 
         if (model.getIsSelected()){
             holder.tvItem.background = ContextCompat.getDrawable(context ,R.drawable.item_circular_thin_color_accent_background)
-            holder.tvItem.setTextColor(Color.parseColor("#008F24"))
+            holder.tvItem.setTextColor(Color.parseColor(context.getString(R.string.colorSelectedExerciseText)))
         }else if (model.getIsCompleted()){
             holder.tvItem.background = ContextCompat.getDrawable(context, R.drawable.item_circular_color_accent_background)
-            holder.tvItem.setTextColor(Color.parseColor("#FFFFFF"))
+            holder.tvItem.setTextColor(Color.parseColor(context.getString(R.string.colorCompletedExerciseText)))
         }else {
             holder.tvItem.background = ContextCompat.getDrawable(context, R.drawable.item_circular_color_gray_background)
-            holder.tvItem.setTextColor(Color.parseColor("#212121"))
+            holder.tvItem.setTextColor(Color.parseColor(context.getString(R.string.colorNotCompletedExerciseText)))
         }
 
     }

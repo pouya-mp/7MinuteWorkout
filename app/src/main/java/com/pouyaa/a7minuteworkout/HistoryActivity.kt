@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_history.*
+import java.util.*
 
 class HistoryActivity : AppCompatActivity() {
 
@@ -16,7 +17,7 @@ class HistoryActivity : AppCompatActivity() {
         var actionBar = supportActionBar
         if (actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true)
-            actionBar.title = "HISTORY"
+            actionBar.title = getString(R.string.history)
             }
         toolbarHistoryActivity.setNavigationOnClickListener {
             onBackPressed()

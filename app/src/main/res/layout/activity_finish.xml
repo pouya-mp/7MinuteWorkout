@@ -12,13 +12,13 @@
         android:id="@+id/toolbarFinishActivity"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="#FFFFFF"
+        android:background="@color/ColorFinishActivityToolbarBackground"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="END"
+        android:text="@string/end"
         android:textColor="@color/colorAccent"
         android:textSize="35sp"
         android:gravity="center"
@@ -35,7 +35,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:contentDescription="@string/image"
+            android:contentDescription="@string/exercise_successful_image"
             android:src="@drawable/ic_action_done"/>
 
     </LinearLayout>
@@ -44,25 +44,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Congratulations!"
+        android:text="@string/congratulations"
         android:textSize="18sp"
-        android:textColor="#212121"/>
+        android:textColor="@color/colorFinishActivityText"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You have finished the workout!"
+        android:text="@string/finished_the_workout"
         android:textSize="18sp"
-        android:textColor="#212121"/>
+        android:textColor="@color/colorFinishActivityText"/>
 
     <Button
         android:id="@+id/btnFinish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
-        android:text="Finish"
+        android:text="@string/finish"
         android:background="@color/colorAccent"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorFinishActivityButtonText"
         android:textSize="18sp"
         />
 

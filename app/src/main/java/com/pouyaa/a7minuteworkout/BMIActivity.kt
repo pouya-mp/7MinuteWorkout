@@ -10,8 +10,8 @@ import java.math.RoundingMode
 
 class BMIActivity : AppCompatActivity() {
 
-    private val metricView = "Metric View"
-    private val usView = "US view"
+    private val metricView = getString(R.string.metricView)
+    private val usView = getString(R.string.usView)
     private var currentUnitView = metricView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +23,7 @@ class BMIActivity : AppCompatActivity() {
 
         if (actionbar != null){
             actionbar.setDisplayHomeAsUpEnabled(true)
-            actionbar.title = "CALCULATE BMI"
+            actionbar.title = getString(R.string.calculateBmi)
         }
         toolbarBMIActivity.setNavigationOnClickListener {
             onBackPressed()
@@ -36,14 +36,14 @@ class BMIActivity : AppCompatActivity() {
                 if (validateMetricUnits()){
                     calculateBMIMetric()
                 }else{
-                    Toast.makeText(this,"Please enter valid values",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,getString(R.string.pleaseEnterValidValues),Toast.LENGTH_SHORT).show()
                 }
 
             }else {
                 if (validateUsUnits()){
                     calculateUsMetric()
                 }else{
-                    Toast.makeText(this,"Please enter valid values",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,getString(R.string.pleaseEnterValidValues),Toast.LENGTH_SHORT).show()
                 }
 
             }
@@ -67,38 +67,38 @@ class BMIActivity : AppCompatActivity() {
         val bmiDescription: String
 
         if (bmi.compareTo(15f) <= 0) {
-            bmiLabel = "Very severely underweight"
-            bmiDescription = "Oops! You really need to take better care of yourself! Eat more!"
+            bmiLabel = getString(R.string.VerySeverelyUnderweight)
+            bmiDescription = getString(R.string.VerySeverelyUnderweightDescription)
         } else if (bmi.compareTo(15f) > 0 && bmi.compareTo(16f) <= 0
         ) {
-            bmiLabel = "Severely underweight"
-            bmiDescription = "Oops!You really need to take better care of yourself! Eat more!"
+            bmiLabel = getString(R.string.SeverelyUnderweight)
+            bmiDescription = getString(R.string.SeverelyUnderweightDescription)
         } else if (bmi.compareTo(16f) > 0 && bmi.compareTo(18.5f) <= 0
         ) {
-            bmiLabel = "Underweight"
-            bmiDescription = "Oops! You really need to take better care of yourself! Eat more!"
+            bmiLabel = getString(R.string.Underweight)
+            bmiDescription = getString(R.string.UnderweightDescription)
         } else if (bmi.compareTo(18.5f) > 0 && bmi.compareTo(25f) <= 0
         ) {
-            bmiLabel = "Normal"
-            bmiDescription = "Congratulations! You are in a good shape!"
+            bmiLabel = getString(R.string.Normal)
+            bmiDescription = getString(R.string.NormalDescription)
         } else if (java.lang.Float.compare(bmi, 25f) > 0 && java.lang.Float.compare(
                 bmi,
                 30f
             ) <= 0
         ) {
-            bmiLabel = "Overweight"
-            bmiDescription = "Oops! You really need to take care of your yourself! Workout maybe!"
+            bmiLabel = getString(R.string.Overweight)
+            bmiDescription = getString(R.string.OverweightDescription)
         } else if (bmi.compareTo(30f) > 0 && bmi.compareTo(35f) <= 0
         ) {
-            bmiLabel = "Obese Class | (Moderately obese)"
-            bmiDescription = "Oops! You really need to take care of your yourself! Workout maybe!"
+            bmiLabel = getString(R.string.ObeseClass1)
+            bmiDescription = getString(R.string.ObeseClass1Description)
         } else if (bmi.compareTo(35f) > 0 && bmi.compareTo(40f) <= 0
         ) {
-            bmiLabel = "Obese Class || (Severely obese)"
-            bmiDescription = "OMG! You are in a very dangerous condition! Act now!"
+            bmiLabel = getString(R.string.ObeseClass2)
+            bmiDescription = getString(R.string.ObeseClass2Description)
         } else {
-            bmiLabel = "Obese Class ||| (Very Severely obese)"
-            bmiDescription = "OMG! You are in a very dangerous condition! Act now!"
+            bmiLabel = getString(R.string.ObeseClass3)
+            bmiDescription = getString(R.string.ObeseClass3Description)
         }
 
         llBMIResult.visibility = View.VISIBLE
@@ -132,7 +132,7 @@ class BMIActivity : AppCompatActivity() {
         var isValid = true
 
         when {
-            etusWeight.text.toString().isEmpty() -> { isValid = false }
+            etUsWeight.text.toString().isEmpty() -> { isValid = false }
             etUsHeightFeet.text.toString().isEmpty() -> { isValid = false }
             etUsHeightInch.text.toString().isEmpty() -> { isValid =false }
         }
@@ -160,7 +160,7 @@ class BMIActivity : AppCompatActivity() {
     private fun makeVisibleUsUnitView(){
         currentUnitView = usView
 
-        etusWeight.text!!.clear()
+        etUsWeight.text!!.clear()
         etUsHeightFeet.text!!.clear()
         etUsHeightInch.text!!.clear()
 
@@ -182,7 +182,7 @@ class BMIActivity : AppCompatActivity() {
     }
 
     private fun calculateUsMetric(){
-        val weight : Float = etusWeight.text.toString().toFloat()
+        val weight : Float = etUsWeight.text.toString().toFloat()
         val feet : String = etUsHeightFeet.text.toString()
         val inch : String = etUsHeightInch.text.toString()
         val height : Float = (inch.toFloat() + (feet.toFloat() * 12))
