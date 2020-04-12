@@ -3,10 +3,8 @@ package com.pouyaa.a7minuteworkout
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_history.*
-import java.util.*
 
 class HistoryActivity : AppCompatActivity() {
 
@@ -14,7 +12,7 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
         setSupportActionBar(toolbarHistoryActivity)
-        var actionBar = supportActionBar
+        val actionBar = supportActionBar
         if (actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true)
             actionBar.title = getString(R.string.history)
@@ -28,8 +26,8 @@ class HistoryActivity : AppCompatActivity() {
     }
 
     private fun viewAllCompletedDates(){
-        val dbhandler = SqLiteOpenHelper(this,null)
-        val completedDates = dbhandler.getAllCompletedDates()
+        val dbHandler = SqLiteOpenHelper(this,null)
+        val completedDates = dbHandler.getAllCompletedDates()
 
         if (completedDates.size > 0 ){
             tvHistory.visibility = View.VISIBLE
@@ -37,7 +35,7 @@ class HistoryActivity : AppCompatActivity() {
             noDataHistory.visibility = View.GONE
 
             rvHistory.layoutManager = LinearLayoutManager(this)
-            var historyAdapter = HistoryAdapter(this,completedDates)
+            val historyAdapter = HistoryAdapter(this,completedDates)
             rvHistory.adapter = historyAdapter
 
         }else{

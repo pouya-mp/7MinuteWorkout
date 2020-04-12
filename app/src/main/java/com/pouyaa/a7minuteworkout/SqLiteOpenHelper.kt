@@ -20,12 +20,12 @@ class SqLiteOpenHelper(context: Context, factory: SQLiteDatabase.CursorFactory?)
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val CREATE_EXERCISE_TABLE = ("CREATE TABLE " + TABLE_HISTORY + "(" + COLUMN_ID + " INTEGER PRIMARY KEY," + COLUMN_COMPLETED_DATE + " TEXT)")
-        db?.execSQL(CREATE_EXERCISE_TABLE)
+        val createExerciseTable = ("CREATE TABLE $TABLE_HISTORY($COLUMN_ID INTEGER PRIMARY KEY,$COLUMN_COMPLETED_DATE TEXT)")
+        db?.execSQL(createExerciseTable)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        db?.execSQL("DROP TABLE IF EXISTS" + TABLE_HISTORY)
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_HISTORY")
         onCreate(db)
     }
 

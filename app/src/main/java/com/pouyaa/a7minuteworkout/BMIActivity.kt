@@ -4,19 +4,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_b_m_i.*
+import kotlinx.android.synthetic.main.activity_bmi.*
 import java.math.BigDecimal
 import java.math.RoundingMode
 
 class BMIActivity : AppCompatActivity() {
 
-    private val metricView = getString(R.string.metricView)
-    private val usView = getString(R.string.usView)
+    private val metricView = "Metric View"
+    private val usView = "US view"
     private var currentUnitView = metricView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_b_m_i)
+        setContentView(R.layout.activity_bmi)
         setSupportActionBar(toolbarBMIActivity)
 
         val actionbar = supportActionBar
@@ -81,10 +81,7 @@ class BMIActivity : AppCompatActivity() {
         ) {
             bmiLabel = getString(R.string.Normal)
             bmiDescription = getString(R.string.NormalDescription)
-        } else if (java.lang.Float.compare(bmi, 25f) > 0 && java.lang.Float.compare(
-                bmi,
-                30f
-            ) <= 0
+        } else if (bmi.compareTo(25f) > 0 && bmi.compareTo(30f) <= 0
         ) {
             bmiLabel = getString(R.string.Overweight)
             bmiDescription = getString(R.string.OverweightDescription)
@@ -101,12 +98,12 @@ class BMIActivity : AppCompatActivity() {
             bmiDescription = getString(R.string.ObeseClass3Description)
         }
 
-        llBMIResult.visibility = View.VISIBLE
 
-//        tvYourBMI.visibility = View.VISIBLE
-//        tvBMIValue.visibility = View.VISIBLE
-//        tvBMIType.visibility = View.VISIBLE
-//        tvBMIDescription.visibility = View.VISIBLE
+
+        tvYourBMI.visibility = View.VISIBLE
+        tvBMIValue.visibility = View.VISIBLE
+        tvBMIType.visibility = View.VISIBLE
+        tvBMIDescription.visibility = View.VISIBLE
 
 
         val bmiValue = BigDecimal(bmi.toDouble()).setScale(2, RoundingMode.HALF_EVEN).toString()
@@ -152,8 +149,14 @@ class BMIActivity : AppCompatActivity() {
 
         tilUSWeight.visibility = View.GONE
         llUsHeight.visibility = View.GONE
+//        tilUsHeightFeet.visibility = View.GONE
+//        tilUsHeightInch.visibility = View.GONE
 
-        llBMIResult.visibility = View.GONE
+
+        tvYourBMI.visibility = View.GONE
+        tvBMIValue.visibility = View.GONE
+        tvBMIType.visibility = View.GONE
+        tvBMIDescription.visibility = View.GONE
 
     }
 
@@ -169,8 +172,13 @@ class BMIActivity : AppCompatActivity() {
 
         tilUSWeight.visibility = View.VISIBLE
         llUsHeight.visibility = View.VISIBLE
+//        tilUsHeightFeet.visibility = View.VISIBLE
+//        tilUsHeightInch.visibility = View.VISIBLE
 
-        llBMIResult.visibility = View.GONE
+        tvYourBMI.visibility = View.GONE
+        tvBMIValue.visibility = View.GONE
+        tvBMIType.visibility = View.GONE
+        tvBMIDescription.visibility = View.GONE
 
     }
 
